@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login - Calorie App</title>
+  <style>
+    body { 
+      /* Background image only */
+      background: url("{{ url_for('static', filename='images/1.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial; 
+      color: #fff; 
+      text-align: center; 
+      position: relative; 
+      min-height: 100vh; 
+      overflow: hidden;
+    }
+
+    .box { 
+      margin: 7% auto; 
+      background: rgba(0,0,0,0.35); 
+      padding: 30px; 
+      border-radius: 12px; 
+      width: 320px; 
+      position: relative;
+      z-index: 1;
+    }
+
+    input { 
+      width: 85%; 
+      padding: 10px; 
+      margin: 8px 0; 
+      border-radius: 8px; 
+      border: none;
+    }
+
+    button { 
+      padding: 10px 20px; 
+      background: #ff5e62; 
+      color: #fff; 
+      border: none; 
+      border-radius: 8px; 
+      cursor: pointer;
+    }
+
+    .error { color: #ffd54d; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>🔐 Login</h2>
+    <form method="post">
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+  </div>
+</body>
+</html>
